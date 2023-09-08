@@ -3,76 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Minecraft Server</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <title>VampirismMC</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico" />
-    <style>
-        /* Vampire Theme */
-        body, .bg-dark {
-            background-color: #2b2b2b !important;
-        }
-        .text-white, .navbar-dark .navbar-nav .nav-link {
-            color: #e74c3c !important;
-        }
-        .btn-secondary {
-            background-color: #e74c3c !important;
-        }
-        /* Make the hero section full-window */
-        #heroCarousel {
-            min-height: calc(100vh - 56px); /* 56px is the height of the Bootstrap navbar */
-            position: relative;
-            margin-top: 56px; /* Add margin to the top */
-        }
-        /* Position the overlay text */
-        .carousel-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 5;
-            font-size: 1.5rem;
-            width: 80%;
-        }
-        /* Add blur to carousel images */
-        .carousel-inner img {
-            filter: blur(2px);
-        }
-        
-        /* Remove blur from team member images */
-        #teamCarousel .carousel-inner img {
-            filter: none;
-        }
-
-        /* Style team member cards */
-        .card {
-            border: none;
-        }
-
-        /* Make the main content have white text */
-        main, main h2, main p, main li {
-            color: #ffffff;
-        }
-
-        /* Style team member cards */
-        .team-card {
-            border: 2px solid #ffffff;
-            border-radius: 10px;
-            margin: 20px;
-            padding: 20px;
-        }
-
-        /* Style carousel controls */
-        .carousel-control-prev, .carousel-control-next {
-            z-index: 2;
-        }
-
-        /* Style carousel inner */
-        .carousel-inner {
-            padding: 0 40px;  /* Add padding to fit within arrows */
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -87,7 +21,7 @@
                     <li class="nav-item"><a class="nav-link" href="#currency">Currency</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team Members</a></li>
                     <li class="nav-item"><a class="nav-link" href="#wiki">Wiki</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blogs">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
                 </ul>
             </div>
         </div>
@@ -106,13 +40,13 @@
         <!-- Carousel Images -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="baobab_tree.png" class="d-block w-100" alt="Image 1">
+                <img src="images/baobab_tree.png" class="d-block w-100" alt="Image 1">
             </div>
             <div class="carousel-item">
-                <img src="packed_dirt_patches.png" class="d-block w-100" alt="Image 2">
+                <img src="images/packed_dirt_patches.png" class="d-block w-100" alt="Image 2">
             </div>
             <div class="carousel-item">
-                <img src="new_stone_variants.png" class="d-block w-100" alt="Image 3">
+                <img src="images/new_stone_variants.png" class="d-block w-100" alt="Image 3">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">

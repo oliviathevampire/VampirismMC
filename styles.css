@@ -1,12 +1,26 @@
 /* Vampire Theme */
 body, .bg-dark {
-    background-color: #2b2b2b !important;
+    background-color: #333333;
+    color: #F5F5F5;
+    font-family: 'Roboto', sans-serif;
 }
-.text-white, .navbar-dark .navbar-nav .nav-link {
+
+.navbar {
+    background-color: #272727;
+}
+
+.text-white, .navbar .navbar-nav .nav-link {
     color: #e74c3c !important;
 }
+
+/* Accent colors */
+a, .btn-primary {
+    color: #8B0000;
+}
+
+/* Secondary Accent */
 .btn-secondary {
-    background-color: #e74c3c !important;
+    background-color: #C0C0C0;
 }
 /* Make the hero section full-window */
 #heroCarousel {
@@ -63,8 +77,18 @@ main, main h2, main p, main li {
     padding: 0 40px;  /* Add padding to fit within arrows */
 }
 
+/* Flexbox container */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
 /* Style for blog posts */
 .blog-post {
+    flex: 1;
+    max-width: calc(20% - 20px);  /* Thinner */
+    min-height: 300px;  /* Taller */
     border: 2px solid #ffffff;
     border-radius: 15px;
     margin: 10px;

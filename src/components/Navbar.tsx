@@ -3,26 +3,26 @@ import Link from 'next/link';
 
 // Define the Navbar component
 const Navbar: React.FC = () => {
-  return (
-    <nav className="bg-gray-800 p-4">
-      <div className="container mx-auto flex justify-between items-center">
-        <Link href="/" className="flex items-center text-white">
-          <img src="/images/logo.png" alt="VampirismMC Logo" className="h-8 w-auto mr-2" /> {/* Added logo image */}VampirismMC
-        </Link>
-        <div className="flex space-x-4">
-          <Link href="/" className="text-white">
-            Home
-          </Link>
-          <Link href="/about" className="text-white">
-            About
-          </Link>
-          <Link href="/contact" className="text-white">
-            Contact
-          </Link>
-        </div>
-      </div>
-    </nav>
-  );
+	return (
+		<nav className="bg-gray-800 p-4">
+			<div className="w-full mx-auto px-4 sm:flex sm:items-center sm:justify-between">
+				<Link href="/" className="flex-none  text-white">
+					<img src="/images/logo.png" alt="VampirismMC Logo" className="h-8 w-auto mr-2" />
+				</Link>
+				<div className="flex space-x-4">
+					<Link href="/about" className="text-white font-bold">
+						About
+					</Link>
+					<Link href="/contact" className="text-white font-bold">
+						Contact
+					</Link>
+					<Link href="/blogs" className="text-white font-bold">
+						Blogs
+					</Link>
+				</div>
+			</div>
+		</nav>
+	);
 };
 
 export default Navbar;

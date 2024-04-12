@@ -2,11 +2,10 @@ import fs from "fs"
 import { GetStaticPropsContext, InferGetStaticPropsType } from "next"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote } from "next-mdx-remote"
-import H1 from "@components/mdx/H1"
 import HeroImage from "@components/mdx/HeroImage"
 import React from "react"
 import P from "@components/mdx/P"
-import H2 from "@components/mdx/H2"
+import SidebarImage from "@components/mdx/SidebarImage";
 import Navbar from "@components/Navbar"
 import '../../app/globals.css'
 import PostHeader from "@components/PostHeader"
@@ -26,7 +25,7 @@ export default function PostPage({ source }: InferGetStaticPropsType<typeof getS
 	return (
 		<>
 			<Navbar />
-			<div className="container mx-auto rounded-lg shadow-lg text-white">
+			<div className="container mx-auto  text-white">
         <PostHeader title={source.frontmatter.title as string} coverImage={source.frontmatter.thumbnail as string} />
 				<MDXRemote
 					{...source}
@@ -37,6 +36,8 @@ export default function PostPage({ source }: InferGetStaticPropsType<typeof getS
 						Paragraph,
 						HeroImage,
 						br: BR,
+            p: P,
+            SidebarImage
 					}}
 				/>
 			</div>

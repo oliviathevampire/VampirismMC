@@ -5,9 +5,9 @@ import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 
 const images = [
-		"/images/baobab_tree.png",
-		"/images/new_stone_variants.png",
-		"/images/packed_dirt_patches.png",
+		"/images/1.png",
+		"/images/2.png",
+		"/images/3.png",
 ];
 
 const Carousel: React.FC = () => {

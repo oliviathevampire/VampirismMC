@@ -9,7 +9,7 @@ type Props = {
 const PostHeader = ({ title, coverImage }: Props) => {
   return (
     <>
-      <div className="mb-7 sm:mx-0">
+      <div className="mb-7 sm:mx-0 rounded-b-lg">
         <CoverImage title={title} src={coverImage} />
       </div>
       <PostTitle>{title}</PostTitle>

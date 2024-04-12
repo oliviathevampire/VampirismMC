@@ -9,7 +9,7 @@ type Props = {
 
 const CoverImage = ({ title, src, slug }: Props) => {
   const image = (
-    <img src={src} alt={`Cover Image for ${title}`} className={cn('shadow-sm w-full', 'h-64', 'object-cover', {
+    <img src={src} alt={`Cover Image for ${title}`} className={cn('shadow-sm w-full', 'h-auto', 'object-cover', {
       'hover:shadow-lg transition-shadow duration-200': slug,
     })}
     />

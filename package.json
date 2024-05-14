@@ -1,6 +1,7 @@
 {
   "name": "vampirismmc-website",
   "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,7 +17,7 @@
     "keen-slider": "^6.8.6",
     "lucide-react": "^0.279.0",
     "marked": "^9.0.3",
-    "next": "^14.2.2",
+    "next": "latest",
     "next-mdx-remote": "^4.4.1",
     "react": "latest",
     "react-dom": "latest",

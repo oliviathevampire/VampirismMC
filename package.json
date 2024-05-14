@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "vercel-build": "npm run prepare && next build"
+    "lint": "next lint"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
@@ -32,7 +31,6 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "next": "^14.2.2",
     "autoprefixer": "latest",
     "eslint": "8.50.0",
     "eslint-config-next": "13.5.3",

@@ -1,12 +1,15 @@
 import React from 'react';
-import { getPostsData } from '../src/app/utils/getPostsData';
+import { getPosts } from '@utils/MDXUtils';
 import Link from 'next/link';
 import { GetStaticProps } from 'next';
-import { getPostBySlug } from '../src/utils/MDXUtils';
-import '../src/globals.css'
+import { getPostBySlug } from '../../utils/MDXUtils';
+
+export const preload = () => {
+	void getPosts()
+}
 
 export default async function Blogs() {
-	const posts = getPostsData()
+	const posts = getPosts()
 	return (
 		<div className="text-white min-h-screen">
 			<div className="container mx-auto p-4">
@@ -20,9 +23,9 @@ export default async function Blogs() {
 						className="flex flex-col bg-gray-800 p-6 rounded-lg shadow-lg text-white h-full"
 					  >
 						<Link
-						  as={`/posts/${post.filePath.replace(/\.mdx?$/, '')}`}
-						  href={`/posts/[slug]`}
-						  className="block focus:outline-none focus:ring-4"
+							as={`/posts/${post.filePath.replace(/\.mdx?$/, '')}`}
+							href={`/posts/[slug]`}
+							className="block focus:outline-none focus:ring-4"
 						>
 							{post.data.thumbnail && (
 							<div className="flex-shrink-0">

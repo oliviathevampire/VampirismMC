@@ -45,19 +45,19 @@ export const getPosts = (): Post[] => {
 
 export const getPostBySlug = async (slug: string) => {
   if (!slug) {
-      throw new Error("Slug is undefined.");
+    throw new Error("Slug is undefined.");
   }
   const postFilePath = path.join(POSTS_PATH, `${slug}.mdx`);
   if (!fs.existsSync(postFilePath)) {
-      throw new Error(`No post found for slug ${slug}`);
+    throw new Error(`No post found for slug ${slug}`);
   }
   const source = fs.readFileSync(postFilePath, 'utf8');
 
   const { content, data } = matter(source);
 
   const mdxSource = await serialize(content, {
-      mdxOptions: {},
-      scope: data,
+    mdxOptions: {},
+    scope: data,
   });
 
   return { mdxSource, data, postFilePath };

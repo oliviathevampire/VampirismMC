@@ -7,7 +7,7 @@ import React from "react"
 import P from "@components/mdx/P"
 import SidebarImage from "@components/mdx/SidebarImage";
 import Navbar from "@components/Navbar"
-import '../../src/globals.css'
+import '../../globals.css'
 import PostHeader from "@components/PostHeader"
 import BR from "@components/mdx/BR"
 import { Heading } from "@components/mdx/Heading"

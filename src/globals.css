@@ -5,6 +5,15 @@
 
 @layer base {
   :root {
+    --primary-purple: #6f49a4;
+    --hover-purple: #a37dd7;
+    --primary-navy: #202032;
+    --secondary-blue: #3c3c57;
+    --accent-gold: #F2D16B;
+    --neutral-white: #F8F8F8;
+    --neutral-gray: #6E7E91;
+    --text-light: #E8E8E8;
+    --link-color: #9E7CC1;
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
     --card: 0 0% 100%;
@@ -59,6 +68,12 @@
   }
 }
 
+.img-dynamic {
+  width: 100%; /* Ensure it takes the full width of the container */
+  max-height: 100%; /* Make sure it doesn't overflow the container's height */
+  height: auto; /* Maintain the original aspect ratio */
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -73,22 +88,64 @@
   }
 }
 
+.navbar {
+  background-color: var(--secondary-blue);
+}
+
 body {
-  background-color: #2C2C2C;
+  background-color: var(--primary-navy);
+  color: var(--text-light);
   margin: 0;
-  color: #F5F5F5;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+p {
+  color: var(--light-gray); /* Use this for text over dark backgrounds */
+}
+
 h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-purple);
   font-family: 'Roboto', sans-serif;
 }
 
 /* Custom class for gold color */
 .text-gold {
     color: #9a45d6;
+}
+
+.nav-button {
+  color: var(--neutral-white); /* Assuming white text for the buttons */
+  padding: 6px 15px;
+  transition: background-color 0.3s, border-bottom 0.1s;
+}
+
+.nav-button:hover, .nav-button:focus {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly lighter on hover */
+  border-bottom: 2px solid var(--accent-gold); /* Underline effect */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.button-primary {
+  background-color: var(--primary-purple);
+  color: var(--neutral-white);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: var(--hover-purple); /* A lighter purple */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button-secondary {
+  background-color: var(--secondary-blue);
+  color: var(--neutral-white);
+}
+
+.button-accent {
+  background-color: var(--accent-gold);
+  color: var(--primary-navy);
 }
 
 .bg-gold {
@@ -99,8 +156,21 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #7e34b3;
 }
 
+.button-discord {
+  background-color: var(--accent-gold); /* Gold color for prominence */
+  color: var(--primary-navy); /* Dark text on the light button */
+  /* Add transition for hover effects */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button-discord:hover {
+  transform: translateY(-2px); /* Lift the button slightly on hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
 .border-gold {
   border-color: #9a45d6;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .border-gold:hover {
@@ -133,14 +203,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .arrow {
-  width: 30px;
-  height: 30px;
+  width: 44px; /* Increase width for larger hit area */
+  height: 44px; /* Increase height for larger hit area */
   position: absolute;
+  border-radius: 50%; /* Circular background */
   top: 50%;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   fill: #fff;
   cursor: pointer;
+  padding: 8px; /* Add padding for spacing */
+  transition: background-color 0.2s ease; /* Transition for hover effect */
+}
+
+.arrow:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lighten on hover */
 }
 
 .arrow--left {

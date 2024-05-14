@@ -20,8 +20,8 @@ const SidebarImage: React.FC<SidebarImageProps> = ({ title, description, imageUr
       <div className={`flex flex-col ${flexDirectionMd} items-center my-4 md:my-6 max-w-4xl mx-auto p-2 md:p-4 rounded-lg`} style={{ backgroundColor }}>
         <img src={imageUrl} alt={title} className={`w-full md:w-48 md:h-auto ${marginMd} mb-2 md:mb-0`} />
         <div className="flex-1">
-          <h2 className="mdx-h2 mb-1">{title}</h2>
-          <p className="text-center md:text-left">{description}</p>
+          <h2 className="text-white mdx-h2 mb-1">{title}</h2>
+          <p className="text-center md:text-left" style={{"color":"#dfdfdf"}}>{description}</p>
         </div>
       </div>
   );

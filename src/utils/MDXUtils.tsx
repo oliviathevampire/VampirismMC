@@ -44,14 +44,20 @@ export const getPosts = (): Post[] => {
 };
 
 export const getPostBySlug = async (slug: string) => {
+  if (!slug) {
+      throw new Error("Slug is undefined.");
+  }
   const postFilePath = path.join(POSTS_PATH, `${slug}.mdx`);
-  const source = fs.readFileSync(postFilePath);
+  if (!fs.existsSync(postFilePath)) {
+      throw new Error(`No post found for slug ${slug}`);
+  }
+  const source = fs.readFileSync(postFilePath, 'utf8');
 
   const { content, data } = matter(source);
 
   const mdxSource = await serialize(content, {
-    mdxOptions: {},
-    scope: data,
+      mdxOptions: {},
+      scope: data,
   });
 
   return { mdxSource, data, postFilePath };
@@ -96,4 +102,12 @@ export const getPreviousPostBySlug = (slug: string): PostBySlug | null => {
     title: post.data.title,
     slug: previousPostSlug,
   };
+};
+
+// A function to get all post slugs (file names)
+export const getPostSlugs = (): string[] => {
+  const postDirectory = path.join(process.cwd(), '_posts');
+  return fs.readdirSync(postDirectory)
+    .filter((filename) => /\.mdx?$/.test(filename)) // Only include .md(x) files
+    .map((filename) => filename.replace(/\.mdx?$/, '')); // Remove the file extensions to get the slugs
 };

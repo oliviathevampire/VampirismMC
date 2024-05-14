@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 type Props = {
   title: string
-  coverImage: String
+  coverImage: string
   excerpt: string
   slug: string
 }

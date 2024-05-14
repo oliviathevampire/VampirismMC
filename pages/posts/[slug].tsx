@@ -7,7 +7,7 @@ import React from "react"
 import P from "@components/mdx/P"
 import SidebarImage from "@components/mdx/SidebarImage";
 import Navbar from "@components/Navbar"
-import '../../app/globals.css'
+import '../../src/globals.css'
 import PostHeader from "@components/PostHeader"
 import BR from "@components/mdx/BR"
 import { Heading } from "@components/mdx/Heading"
@@ -45,7 +45,12 @@ export default function PostPage({ source }: InferGetStaticPropsType<typeof getS
 	);
 }
 export async function getStaticPaths() {
-  return { paths: [], fallback: "blocking" }
+  return { paths: [
+    { params: { slug: 'meet-the-npcs' }},
+    { params: { slug: 'what-is-vampirismmc' }},
+    { params: { slug: 'whispers-of-the-night' }},
+    { params: { slug: 'unique-gameplay-mechanics' }}
+  ], fallback: false }
 }
 
 export async function getStaticProps(
@@ -65,8 +70,6 @@ export async function getStaticProps(
   return {
     props: {
       source: mdxSource,
-    },
-    // enable ISR
-    revalidate: 60,
+    }
   }
 }

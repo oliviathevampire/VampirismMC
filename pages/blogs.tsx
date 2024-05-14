@@ -1,13 +1,12 @@
 import React from 'react';
-import { getPosts } from '@utils/MDXUtils';
+import { getPostsData } from '../src/app/utils/getPostsData';
 import Link from 'next/link';
-
-export const preload = () => {
-	void getPosts()
-}
+import { GetStaticProps } from 'next';
+import { getPostBySlug } from '../src/utils/MDXUtils';
+import '../src/globals.css'
 
 export default async function Blogs() {
-	const posts = getPosts()
+	const posts = getPostsData()
 	return (
 		<div className="text-white min-h-screen">
 			<div className="container mx-auto p-4">
@@ -49,3 +48,18 @@ export default async function Blogs() {
 		</div>
 	)
 }
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    const slug = params?.slug; // Ensure you're safely accessing 'slug'
+    if (!slug) {
+        return {
+            notFound: true, // If slug is undefined, return a 404 page
+        };
+    }
+    const post = await getPostBySlug(slug as string);
+    return {
+        props: {
+            post,
+        },
+    };
+};
